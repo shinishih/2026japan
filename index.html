@@ -1,0 +1,952 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>東京與伊豆 8 天 7 夜深度遊行程計畫表</title>
+  <style>
+    :root {
+      --paper: #fbfaf7;
+      --ink: #25231f;
+      --muted: #706b61;
+      --line: #e1d8cc;
+      --red: #c8493e;
+      --teal: #276c68;
+      --gold: #b98228;
+      --sky: #dcebf0;
+      --card: #ffffff;
+      --shadow: 0 12px 34px rgba(43, 35, 25, .11);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at top left, rgba(200,73,62,.14), transparent 28rem),
+        linear-gradient(180deg, #f3efe7 0%, var(--paper) 28rem);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      line-height: 1.55;
+    }
+    .hero {
+      min-height: 92vh;
+      padding: 24px 18px 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 26px;
+      color: #fff;
+      background:
+        linear-gradient(180deg, rgba(24,29,33,.18), rgba(24,29,33,.68)),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 900'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23e87364'/%3E%3Cstop offset='.43' stop-color='%23509ca0'/%3E%3Cstop offset='1' stop-color='%232f5064'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1200' height='900' fill='url(%23g)'/%3E%3Cpath d='M0 660 C190 590 310 690 470 620 C650 540 750 610 925 505 C1045 433 1120 432 1200 405 L1200 900 L0 900 Z' fill='%23f4efe5' opacity='.95'/%3E%3Cpath d='M55 690 C245 635 337 730 505 655 C700 568 780 632 950 538 C1057 479 1133 473 1200 455' fill='none' stroke='%23ffffff' stroke-width='14' stroke-linecap='round' opacity='.62'/%3E%3Ccircle cx='175' cy='647' r='21' fill='%23ffffff'/%3E%3Ccircle cx='510' cy='652' r='21' fill='%23ffffff'/%3E%3Ccircle cx='856' cy='588' r='21' fill='%23ffffff'/%3E%3Cpath d='M825 360 l50 -138 l50 138 Z' fill='%23f9f6ef' opacity='.9'/%3E%3Cpath d='M650 374 h96 v210 h-96zM690 290 h36 v84h-36zM668 410 h18v174h-18zM713 410 h18v174h-18z' fill='%23ffffff' opacity='.75'/%3E%3Ccircle cx='182' cy='230' r='78' fill='%23fff4cf' opacity='.9'/%3E%3C/svg%3E");
+      background-size: cover;
+      background-position: center;
+    }
+    .hero h1 {
+      margin: 0;
+      max-width: 840px;
+      font-size: clamp(2.35rem, 10vw, 5.8rem);
+      line-height: .95;
+      letter-spacing: 0;
+      text-wrap: balance;
+    }
+    .hero p {
+      margin: 14px 0 0;
+      max-width: 680px;
+      font-size: 1.05rem;
+    }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+    .chip {
+      padding: 8px 12px;
+      border: 1px solid rgba(255,255,255,.42);
+      background: rgba(255,255,255,.14);
+      backdrop-filter: blur(12px);
+      border-radius: 999px;
+      font-weight: 700;
+    }
+    .nav-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      background: rgba(251,250,247,.92);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(14px);
+      overflow-x: auto;
+    }
+    nav {
+      display: flex;
+      gap: 8px;
+      padding: 10px 12px;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+    nav a {
+      flex: 0 0 auto;
+      color: var(--teal);
+      text-decoration: none;
+      border: 1px solid #b7d1cf;
+      background: #fff;
+      padding: 9px 12px;
+      border-radius: 999px;
+      font-weight: 800;
+      min-width: 64px;
+      text-align: center;
+    }
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 22px 12px 48px;
+    }
+    .day-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      margin: 0 0 18px;
+      overflow: hidden;
+    }
+    .day-head {
+      padding: 18px;
+      background: linear-gradient(135deg, #fff8ed, #e9f2f1);
+      border-bottom: 1px solid var(--line);
+    }
+    .day-badge {
+      display: inline-block;
+      color: #fff;
+      background: var(--red);
+      border-radius: 999px;
+      padding: 5px 10px;
+      font-weight: 900;
+      font-size: .9rem;
+    }
+    h2 {
+      margin: 10px 0 4px;
+      font-size: 1.35rem;
+      letter-spacing: 0;
+      line-height: 1.18;
+    }
+    .day-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+    .day-body { padding: 14px; }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 18px minmax(78px, .55fr) 1fr;
+      gap: 8px;
+      align-items: start;
+      padding: 12px 0;
+      border-bottom: 1px dashed var(--line);
+    }
+    .timeline-item:last-child { border-bottom: 0; }
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--gold);
+      margin-top: 7px;
+      box-shadow: 0 0 0 4px #f5e9d6;
+    }
+    .time {
+      color: var(--teal);
+      font-weight: 900;
+      word-break: keep-all;
+    }
+    .copy { font-weight: 650; }
+    .plain-copy {
+      margin: 10px 0;
+      color: #403b34;
+      font-weight: 650;
+    }
+    .schedule-list {
+      display: grid;
+      gap: 10px;
+      margin: 12px 0;
+    }
+    .schedule-row {
+      display: grid;
+      grid-template-columns: minmax(80px, .45fr) 1fr;
+      gap: 10px;
+      padding: 12px;
+      background: #fbfaf6;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+    .schedule-time {
+      color: var(--red);
+      font-weight: 900;
+    }
+    .schedule-detail p, .note-block p, .group-card p {
+      margin: 0 0 7px;
+    }
+    .schedule-detail p:last-child, .note-block p:last-child, .group-card p:last-child {
+      margin-bottom: 0;
+    }
+    .note-block {
+      margin: 12px 0;
+      padding: 14px;
+      background: #fff7df;
+      border: 1px solid #efd58e;
+      border-radius: 8px;
+    }
+    h4 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+      letter-spacing: 0;
+    }
+    .group-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin: 12px 0;
+    }
+    .group-card {
+      padding: 14px;
+      background: #f5fbfb;
+      border: 1px solid #cbe0df;
+      border-radius: 8px;
+    }
+    ul {
+      margin: 5px 0 9px 1.2em;
+      padding: 0;
+    }
+    li { margin: 4px 0; }
+    .place-link {
+      color: var(--teal);
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 3px;
+      font-weight: 900;
+    }
+    .place-link:visited { color: #6b4a91; }
+    .hotel-info {
+      margin: 10px 0 12px;
+      padding: 12px;
+      background: #eef7f6;
+      border: 1px solid #cbe0df;
+      border-radius: 8px;
+      color: #403b34;
+      font-weight: 650;
+    }
+    .hotel-info p {
+      margin: 0 0 6px;
+    }
+    .hotel-info p:last-child {
+      margin-bottom: 0;
+    }
+    .flight-card {
+      margin: 18px 0 0;
+      padding: 14px;
+      background: rgba(255,255,255,.18);
+      border: 1px solid rgba(255,255,255,.44);
+      border-radius: 8px;
+      backdrop-filter: blur(12px);
+      max-width: 680px;
+      font-weight: 750;
+    }
+    .flight-card p {
+      margin: 0 0 6px;
+    }
+    .flight-card p:last-child {
+      margin-bottom: 0;
+    }
+    .flight-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .flight-item {
+      padding: 12px;
+      border: 1px solid rgba(255,255,255,.48);
+      border-radius: 8px;
+      background: rgba(255,255,255,.16);
+    }
+    .flight-route {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 8px;
+      font-weight: 900;
+    }
+    .flight-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 6px 10px;
+      font-size: .94rem;
+    }
+    .flight-detail-card {
+      margin: 0 0 12px;
+      padding: 12px;
+      background: #eef7f6;
+      border: 1px solid #cbe0df;
+      border-radius: 8px;
+      color: #403b34;
+      font-weight: 650;
+    }
+    .flight-detail-card h4 {
+      margin-bottom: 8px;
+    }
+    .flight-detail-card p {
+      margin: 0 0 6px;
+    }
+    .flight-detail-card p:last-child {
+      margin-bottom: 0;
+    }
+    .flight-detail-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 6px 10px;
+      margin-top: 8px;
+    }
+    .weather-card {
+      margin: 0 0 12px;
+      padding: 12px;
+      background: #eef7f6;
+      border: 1px solid #cbe0df;
+      border-radius: 8px;
+      color: #403b34;
+      font-weight: 700;
+    }
+    .weather-card h4 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+    .weather-card p {
+      margin: 0 0 5px;
+    }
+    .weather-card p:last-child {
+      margin-bottom: 0;
+    }
+    .weather-meta {
+      color: var(--muted);
+      font-size: .86rem;
+      font-weight: 650;
+    }
+    .split-center {
+      margin: 0 0 18px;
+      padding: 14px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+    .split-center h2 {
+      margin: 0 0 6px;
+    }
+    .split-center > p {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-weight: 650;
+    }
+    .person-tabs {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 2px 0 12px;
+      margin-bottom: 8px;
+    }
+    .person-tab {
+      flex: 0 0 auto;
+      border: 1px solid #b7d1cf;
+      background: #fff;
+      color: var(--teal);
+      box-shadow: none;
+      border-radius: 999px;
+      padding: 9px 12px;
+      font-weight: 900;
+    }
+    .person-tab.active {
+      background: var(--teal);
+      color: #fff;
+      border-color: var(--teal);
+    }
+    .split-day {
+      border-top: 1px solid var(--line);
+      padding: 14px 0 4px;
+    }
+    .split-day h3 {
+      margin: 0 0 8px;
+      font-size: 1.1rem;
+      line-height: 1.25;
+    }
+    .split-event {
+      margin: 8px 0;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--gold);
+      border-radius: 8px;
+      background: #fbfaf6;
+    }
+    .split-event.fast {
+      border-left-color: var(--red);
+      background: #fff8f6;
+    }
+    .split-event.slow {
+      border-left-color: var(--teal);
+      background: #f5fbfb;
+    }
+    .split-event.all {
+      border-left-color: var(--gold);
+      background: #fffaf0;
+    }
+    .split-event h4 {
+      margin-bottom: 5px;
+      line-height: 1.25;
+    }
+    .split-event p {
+      margin: 0 0 5px;
+      color: #403b34;
+      font-weight: 650;
+    }
+    .split-event p:last-child {
+      margin-bottom: 0;
+    }
+    .split-hidden {
+      display: none;
+    }
+    .transport-plan {
+      margin: 0 0 18px;
+      padding: 14px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+    .transport-plan h2 {
+      margin: 0 0 6px;
+    }
+    .transport-plan > p {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-weight: 650;
+    }
+    .transport-day {
+      border-top: 1px solid var(--line);
+      padding: 14px 0 4px;
+    }
+    .transport-day h3 {
+      margin: 0 0 8px;
+      font-size: 1.1rem;
+      line-height: 1.25;
+    }
+    .transport-step {
+      display: grid;
+      grid-template-columns: 82px 1fr;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px dashed var(--line);
+    }
+    .transport-step:last-child {
+      border-bottom: 0;
+    }
+    .transport-time {
+      color: var(--teal);
+      font-weight: 900;
+    }
+    .transport-copy {
+      font-weight: 650;
+      color: #403b34;
+    }
+    .transport-tag {
+      display: inline-block;
+      margin-right: 5px;
+      padding: 2px 7px;
+      border-radius: 999px;
+      background: #fff7df;
+      border: 1px solid #efd58e;
+      color: #8a5b13;
+      font-size: .82rem;
+      font-weight: 900;
+    }
+    .transport-tag.depart { background: #edf7ff; border-color: #b9d8ee; color: #235d78; }
+    .transport-tag.arrive { background: #eef7f6; border-color: #b7d1cf; color: var(--teal); }
+    .screen-tools {
+      position: fixed;
+      right: 12px;
+      bottom: 12px;
+      z-index: 6;
+      display: flex;
+      gap: 8px;
+    }
+    button {
+      appearance: none;
+      border: 0;
+      background: var(--teal);
+      color: #fff;
+      border-radius: 999px;
+      padding: 11px 14px;
+      font-weight: 900;
+      box-shadow: 0 9px 24px rgba(39,108,104,.25);
+    }
+    body.clean .nav-wrap, body.clean .screen-tools { display: none; }
+    body.clean .day-card { box-shadow: none; break-inside: avoid; }
+    @media (max-width: 680px) {
+      .hero { min-height: 84vh; padding-top: 18px; }
+      .hero p { font-size: .98rem; }
+      main { padding-inline: 10px; }
+      .day-head { padding: 15px; }
+      .day-body { padding: 12px; }
+      .group-grid { grid-template-columns: 1fr; }
+      .timeline-item {
+        grid-template-columns: 16px 1fr;
+      }
+      .time {
+        grid-column: 2;
+      }
+      .copy {
+        grid-column: 2;
+      }
+      .schedule-row {
+        grid-template-columns: 1fr;
+      }
+      .flight-route {
+        display: block;
+      }
+      .flight-grid, .flight-detail-grid {
+        grid-template-columns: 1fr;
+      }
+      .transport-step {
+        grid-template-columns: 1fr;
+        gap: 3px;
+      }
+    }
+    @media print {
+      .nav-wrap, .screen-tools { display: none; }
+      .hero { min-height: auto; padding: 28px 18px; }
+      .day-card { box-shadow: none; page-break-inside: avoid; }
+      body { background: #fff; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <div class="meta">
+        <span class="chip">東京</span>
+        <span class="chip">伊豆</span>
+        <span class="chip">8 天 7 夜</span>
+        <span class="chip">家庭旅行</span>
+      </div>
+      <h1>東京與伊豆 8 天 7 夜深度遊行程計畫表</h1>
+      <p>本行程專為家族與深度旅遊設計，兼顧文化參拜、潮流購物、自然景觀與頂級溫泉體驗。內含分組行程規劃及實用計程車溝通小卡。</p>
+      <div class="flight-card">
+        <p><strong>✈️ 航班資訊：國泰航空</strong></p>
+        <div class="flight-list">
+          <div class="flight-item">
+            <div class="flight-route"><span>去程 CX450</span><span>7/09（四）13:00 - 17:15</span></div>
+            <div class="flight-grid">
+              <div>台北桃園 T1 → 東京成田 T2</div>
+              <div>飛行時間：03:15</div>
+              <div>艙等：Economy</div>
+              <div>行李：2PC</div>
+            </div>
+          </div>
+          <div class="flight-item">
+            <div class="flight-route"><span>回程 CX451</span><span>7/16（四）15:45 - 18:25</span></div>
+            <div class="flight-grid">
+              <div>東京成田 T2 → 台北桃園 T1</div>
+              <div>飛行時間：03:40</div>
+              <div>艙等：Economy</div>
+              <div>行李：2PC</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="nav-wrap">
+    <nav><a href="#transport-plan" aria-label="前往最新版交通時間軸">交通</a><a href="#day-1" aria-label="前往 Day 1">Day 1</a><a href="#day-2" aria-label="前往 Day 2">Day 2</a><a href="#day-3" aria-label="前往 Day 3">Day 3</a><a href="#day-4" aria-label="前往 Day 4">Day 4</a><a href="#day-5" aria-label="前往 Day 5">Day 5</a><a href="#day-6" aria-label="前往 Day 6">Day 6</a><a href="#day-7" aria-label="前往 Day 7">Day 7</a><a href="#day-8" aria-label="前往 Day 8">Day 8</a></nav>
+  </div>
+  <main>
+    <section class="split-center" id="split-center">
+      <h2>每日分流指揮中心</h2>
+      <p>先點人名，只看自己相關的行程。全體集合、集合點與支援任務會一起保留。</p>
+      <div class="person-tabs" aria-label="依旅伴篩選行程">
+        <button class="person-tab active" type="button" data-person-filter="全部">全部</button>
+        <button class="person-tab" type="button" data-person-filter="阿嬤">阿嬤</button>
+        <button class="person-tab" type="button" data-person-filter="阿公">阿公</button>
+        <button class="person-tab" type="button" data-person-filter="青少年爸爸">青少年爸爸</button>
+        <button class="person-tab" type="button" data-person-filter="青少年媽媽">青少年媽媽</button>
+        <button class="person-tab" type="button" data-person-filter="高二">高二</button>
+        <button class="person-tab" type="button" data-person-filter="國一">國一</button>
+        <button class="person-tab" type="button" data-person-filter="二寶媽">二寶媽</button>
+        <button class="person-tab" type="button" data-person-filter="6歲大寶">6歲大寶</button>
+        <button class="person-tab" type="button" data-person-filter="3歲小寶">3歲小寶</button>
+      </div>
+
+      <div class="split-day">
+        <h3>Day 1｜7/09 抵達東京與首夜分流</h3>
+        <article class="split-event all" data-persons="全部 阿嬤 阿公 青少年爸爸 青少年媽媽 高二 國一 二寶媽 6歲大寶 3歲小寶"><h4>20:00 - 21:30｜全體集合</h4><p>和食えん 汐留店慶祝旅程開始。</p></article>
+        <article class="split-event slow" data-persons="阿嬤 二寶媽 6歲大寶 3歲小寶"><h4>21:30 後｜🛋️ 輕鬆慢遊組</h4><p>阿嬤、二寶媽、6歲大寶、3歲小寶直接回飯店洗澡休息。大寶第一晚早睡，阿嬤也提早安穩入睡。</p></article>
+        <article class="split-event fast" data-persons="阿公 青少年爸爸 青少年媽媽 高二 國一"><h4>21:30 後｜⚡ 活力衝刺組</h4><p>阿公、青少年爸爸、青少年媽媽、高二、國一快閃 DON DON DONKI 銀座本館，外帶 Ginza Sand 當宵夜。</p></article>
+      </div>
+
+      <div class="split-day">
+        <h3>Day 2｜7/10 明治神宮、原宿澀谷與麻布台</h3>
+        <article class="split-event all" data-persons="全部 阿嬤 阿公 青少年爸爸 青少年媽媽 高二 國一 二寶媽 6歲大寶 3歲小寶"><h4>09:30｜全員計程車到明治神宮會館停車場</h4><p>避開碎石路，先全體抵達再分速前進。</p></article>
+        <article class="split-event slow" data-persons="阿嬤 二寶媽 3歲小寶"><h4>明治神宮｜🛋️ 輕鬆慢遊組</h4><p>阿嬤、二寶媽、3歲小寶在平坦綠蔭慢步，推車與長輩友善。</p></article>
+        <article class="split-event fast" data-persons="阿公 青少年爸爸 青少年媽媽 高二 國一 6歲大寶"><h4>明治神宮｜⚡ 活力衝刺組</h4><p>阿公、青少年家四人、6歲大寶大步前進本殿參拜。</p></article>
+        <article class="split-event fast" data-persons="阿公 青少年爸爸 青少年媽媽 高二 國一 6歲大寶"><h4>12:00｜原宿澀谷潮流線</h4><p>竹下通、貓街小吃、澀谷宮下公園。大寶看玩具，青少年追潮流，阿公行程滿。</p></article>
+        <article class="split-event slow" data-persons="阿嬤 二寶媽 3歲小寶"><h4>12:00｜麻布台之丘摩登線</h4><p>阿嬤、二寶媽、3歲小寶在無障礙商場慢度午後，Pelican Café、Market、伴手禮。</p></article>
+        <article class="split-event all" data-persons="全部 阿嬤 阿公 青少年爸爸 青少年媽媽 高二 國一 二寶媽 6歲大寶 3歲小寶"><h4>16:30｜全體會合</h4><p>潮流組搭車到麻布台之丘會合，買伴手禮並共進晚餐。</p></article>
+      </div>
+
+      <div class="split-day">
+        <h3>Day 3｜7/11 豐洲光影、LaLaport 與日本橋</h3>
+        <article class="split-event all" data-persons="全部 阿嬤 阿公 青少年爸爸 青少年媽媽 高二 國一 二寶媽 6歲大寶 3歲小寶"><h4>09:30｜全體集合</h4><p>搭百合海鷗線欣賞東京灣高空景色。</p></article>
+        <article class="split-event fast" data-persons="阿公 青少年爸爸 青少年媽媽 高二 國一 6歲大寶"><h4>10:30｜⚡ teamLab Planets 組</h4><p>阿公、青少年家四人、6歲大寶挑戰光影與涉水。</p></article>
+        <article class="split-event slow" data-persons="阿嬤 二寶媽 3歲小寶"><h4>10:30｜🛋️ LaLaport 慢遊組</h4><p>阿嬤、二寶媽、3歲小寶在 moritae 喝抹茶、吃聖代，避開涉水與喧鬧。</p></article>
+        <article class="split-event all" data-persons="全部 阿嬤 阿公 青少年爸爸 青少年媽媽 高二 國一 二寶媽 6歲大寶 3歲小寶"><h4>12:45 - 16:30｜全體集合</h4><p>LaLaport 午餐與商場購物，各家庭自由血拼。</p></article>
+        <article class="split-event slow" data-persons="二寶媽 6歲大寶 3歲小寶 青少年媽媽"><h4>17:00｜🦖 寶可夢餐廳組</h4><p>二寶媽、6歲大寶、3歲小寶，加青少年媽媽支援。兩位媽媽互相幫忙餵飯拍照。</p></article>
+        <article class="split-event fast" data-persons="阿公 阿嬤 青少年爸爸 高二 國一"><h4>17:00｜🛍️ 百貨逛街組</h4><p>阿公、阿嬤、青少年爸爸、高二、國一逛高島屋與 COREDO，買人形町今半壽喜燒便當。</p></article>
+      </div>
+
+      <div class="split-day">
+        <h3>Day 4｜7/12 包車、十國峠與熱海</h3>
+        <article class="split-event all" data-persons="全部 阿嬤 阿公 青少年爸爸 青少年媽媽 高二 國一 二寶媽 6歲大寶 3歲小寶"><h4>09:00 - 15:00｜全體集合</h4><p>包車前往熱海、商店街午餐，搭十國峠纜車拍富士山大合照。</p></article>
+        <article class="split-event slow" data-persons="阿嬤 二寶媽 3歲小寶"><h4>15:30 後｜🛋️ 熱海沙灘慢遊</h4><p>阿嬤、二寶媽、3歲小寶直達親水公園。小寶踩水，阿嬤坐海邊長椅休息。</p></article>
+        <article class="split-event fast" data-persons="阿公 青少年爸爸 青少年媽媽 高二 國一 6歲大寶"><h4>15:30 後｜⚡ 熱海銀座衝刺</h4><p>阿公、青少年家四人、6歲大寶走熱海復古街道、熱海纜車與熱海城。</p></article>
+        <article class="split-event all" data-persons="全部 阿嬤 阿公 青少年爸爸 青少年媽媽 高二 國一 二寶媽 6歲大寶 3歲小寶"><h4>19:00｜全員旅館會合</h4><p>錦月熱海山莊泡湯並享用溫泉會席晚餐。</p></article>
+      </div>
+
+      <div class="split-day">
+        <h3>Day 5｜7/13 大室山、城崎海岸與修善寺</h3>
+        <article class="split-event all" data-persons="全部 阿嬤 阿公 青少年爸爸 青少年媽媽 高二 國一 二寶媽 6歲大寶 3歲小寶"><h4>09:50｜全體搭大室山吊椅</h4><p>一起上山後依體力分流。</p></article>
+        <article class="split-event slow" data-persons="阿嬤 二寶媽 3歲小寶"><h4>大室山｜🛋️ 展望台慢遊</h4><p>阿嬤、二寶媽、3歲小寶在山頂拍照、吃烤糰子看海。</p></article>
+        <article class="split-event fast" data-persons="阿公 青少年爸爸 青少年媽媽 高二 國一 6歲大寶"><h4>大室山｜⚡ 火山口步道</h4><p>阿公、青少年家四人、6歲大寶挑戰缽巡一圈。</p></article>
+        <article class="split-event all" data-persons="全部 阿嬤 阿公 青少年爸爸 青少年媽媽 高二 國一 二寶媽 6歲大寶 3歲小寶"><h4>12:00｜全體 Boranaya 午餐</h4><p>享用金目鯛海鮮料理。</p></article>
+        <article class="split-event slow" data-persons="阿嬤 二寶媽 3歲小寶"><h4>13:30｜🛋️ 餐廳看海休息</h4><p>留在 Boranaya 喝茶、吹冷氣、看海，避開崎嶇岩石路。</p></article>
+        <article class="split-event fast" data-persons="阿公 青少年爸爸 青少年媽媽 高二 國一 6歲大寶"><h4>13:30｜⚡ 門脇吊橋與燈塔</h4><p>穿越森林步道，挑戰 23 公尺高吊橋與燈塔。</p></article>
+        <article class="split-event all" data-persons="全部 阿嬤 阿公 青少年爸爸 青少年媽媽 高二 國一 二寶媽 6歲大寶 3歲小寶"><h4>15:40｜全體修善寺散策</h4><p>修禪寺、竹林小徑、足湯，之後入住修善寺萬豪。</p></article>
+      </div>
+
+      <div class="split-day">
+        <h3>Day 6｜7/14 動物公園與 Saphir 踴子號</h3>
+        <article class="split-event all" data-persons="全部 阿嬤 阿公 青少年爸爸 青少年媽媽 高二 國一 二寶媽 6歲大寶 3歲小寶"><h4>11:00 - 14:00｜全體集合</h4><p>伊豆仙人掌動物公園看水豚，地形平緩，長輩幼童都適合。</p></article>
+        <article class="split-event all" data-persons="全部 阿嬤 阿公 青少年爸爸 青少年媽媽 高二 國一 二寶媽 6歲大寶 3歲小寶"><h4>15:10 - 16:45｜全體搭 Saphir 踴子號</h4><p>頂級綠色車廂看海補眠，直達東京車站。</p></article>
+        <article class="split-event slow" data-persons="阿公 阿嬤 二寶媽 6歲大寶 3歲小寶 青少年爸爸"><h4>16:45｜🛋️ 尊榮長輩幼童隊</h4><p>阿公、阿嬤、二寶媽、6歲大寶、3歲小寶，加青少年爸爸支援，搭兩台計程車直達秋葉原飯店。</p></article>
+        <article class="split-event fast" data-persons="青少年媽媽 高二 國一"><h4>16:45｜📦 行李特攻隊</h4><p>青少年媽媽、高二、國一推全家大行李，搭山手線兩站到秋葉原飯店會合。</p></article>
+      </div>
+
+      <div class="split-day">
+        <h3>Day 7｜7/15 淺草與晴空塔雙軌</h3>
+        <article class="split-event slow" data-persons="阿嬤 二寶媽 3歲小寶"><h4>09:30｜🛋️ 淺草側邊慢遊</h4><p>計程車到淺草寺側邊，阿嬤在正殿旁歇息，二寶媽帶小寶吃點心。</p></article>
+        <article class="split-event fast" data-persons="阿公 青少年爸爸 青少年媽媽 高二 國一 6歲大寶"><h4>09:30｜⚡ 雷門仲見世衝刺</h4><p>阿公、青少年家四人、6歲大寶買銅鑼燒與鰻魚飯糰回來會合。</p></article>
+        <article class="split-event all" data-persons="全部 阿嬤 阿公 青少年爸爸 青少年媽媽 高二 國一 二寶媽 6歲大寶 3歲小寶"><h4>11:00｜全體 Chinya 午餐</h4><p>老字號壽喜燒名店。</p></article>
+        <article class="split-event slow" data-persons="阿公 阿嬤 青少年爸爸"><h4>13:00｜🥩 高級景觀孝親組</h4><p>阿公、阿嬤、青少年爸爸逛高級商店，15:30 享受敘敘苑景觀下午茶。</p></article>
+        <article class="split-event fast" data-persons="二寶媽 6歲大寶 3歲小寶 青少年媽媽 高二 國一"><h4>13:00｜🛍️ 潮流與水族館組</h4><p>二寶媽、兩寶、青少年媽媽、高二、國一衝寶可夢中心、JUMP 專賣店，16:00 看企鵝餵食秀。</p></article>
+        <article class="split-event fast" data-persons="阿公 青少年爸爸 青少年媽媽 高二 國一 6歲大寶"><h4>19:00 後｜可選深夜採購</h4><p>體力還有的人步行到 DON DON DONKI 秋葉原店。</p></article>
+      </div>
+
+      <div class="split-day">
+        <h3>Day 8｜7/16 上野與送機</h3>
+        <article class="split-event fast" data-persons="阿公 青少年爸爸 青少年媽媽 高二 國一 6歲大寶"><h4>09:00｜⚡ 上野公園衝刺</h4><p>阿公、青少年家四人、6歲大寶直攻東照宮、花園稻荷神社、合格大佛。</p></article>
+        <article class="split-event slow" data-persons="阿嬤 二寶媽 3歲小寶"><h4>09:00｜☕ 星巴克慢遊</h4><p>阿嬤、二寶媽、3歲小寶計程車到公園內星巴克，喝咖啡、吃點心。</p></article>
+        <article class="split-event all" data-persons="全部 阿嬤 阿公 青少年爸爸 青少年媽媽 高二 國一 二寶媽 6歲大寶 3歲小寶"><h4>11:50｜全體送機</h4><p>專車從 N+飯店 秋葉原出發，直達機場。國泰航空 15:45 - 18:25。</p></article>
+      </div>
+    </section>
+
+    <section class="transport-plan" id="transport-plan">
+      <h2>最新版交通時間軸</h2>
+      <p>以這份為主要行動表：每段標示出發、抵達、交通方式與分流接駁時間。</p>
+
+      <div class="transport-day">
+        <h3>Day 1｜7/9 星期四：抵達東京與首夜分流</h3>
+        <div class="transport-step"><div class="transport-time">18:30</div><div class="transport-copy"><span class="transport-tag depart">Depart</span>於成田/羽田機場集合，行李上大包車或利木津巴士。</div></div>
+        <div class="transport-step"><div class="transport-time">19:30</div><div class="transport-copy"><span class="transport-tag arrive">Arrive</span>抵達東京汐留三井飯店，辦理 Check-in。</div></div>
+        <div class="transport-step"><div class="transport-time">19:55</div><div class="transport-copy"><span class="transport-tag depart">Depart</span>全員從飯店大廳步行出發。</div></div>
+        <div class="transport-step"><div class="transport-time">20:00</div><div class="transport-copy"><span class="transport-tag arrive">Arrive</span>抵達和食えん 汐留店，慶祝開團，預約 20:00。</div></div>
+        <div class="transport-step"><div class="transport-time">21:30</div><div class="transport-copy"><span class="transport-tag depart">Depart</span>晚餐結束，首夜分流。🛋️ 慢遊組步行回飯店，21:33 到房間；⚡ 活力組 21:35 搭計程車，21:42 抵達 DON DON DONKI 銀座本館。</div></div>
+        <div class="transport-step"><div class="transport-time">22:50</div><div class="transport-copy"><span class="transport-tag depart">Depart</span>活力組採購完畢，外帶 Ginza Sand，搭計程車回飯店。</div></div>
+        <div class="transport-step"><div class="transport-time">23:00</div><div class="transport-copy"><span class="transport-tag arrive">Arrive</span>活力組回到汐留飯店休息。</div></div>
+      </div>
+
+      <div class="transport-day">
+        <h3>Day 2｜7/10 星期五：文化參拜、原宿潮流與麻布台</h3>
+        <div class="transport-step"><div class="transport-time">09:30</div><div class="transport-copy"><span class="transport-tag depart">Depart</span>全員自汐留飯店大廳出發，分乘計程車。</div></div>
+        <div class="transport-step"><div class="transport-time">09:55</div><div class="transport-copy"><span class="transport-tag arrive">Arrive</span>抵達明治神宮會館停車場側邊，開始參拜。</div></div>
+        <div class="transport-step"><div class="transport-time">11:45</div><div class="transport-copy"><span class="transport-tag depart">Depart</span>明治神宮結束，中午分流。⚡ 活力組搭 2 台計程車，11:52 抵達竹下通口；🛋️ 慢遊組搭 1 台計程車，12:00 抵達麻布台之丘，Pelican Café 預約 12:15。</div></div>
+        <div class="transport-step"><div class="transport-time">16:00</div><div class="transport-copy"><span class="transport-tag depart">Depart</span>活力組在澀谷宮下公園結束，搭計程車前往麻布台。</div></div>
+        <div class="transport-step"><div class="transport-time">16:15</div><div class="transport-copy"><span class="transport-tag arrive">Arrive</span>全員於麻布台之丘大會合，逛街採買。</div></div>
+        <div class="transport-step"><div class="transport-time">18:00</div><div class="transport-copy">麻布台之丘內享用晚餐，預約 18:00，預計至 19:30。</div></div>
+        <div class="transport-step"><div class="transport-time">19:40</div><div class="transport-copy"><span class="transport-tag depart">Depart</span>全員分乘計程車返回飯店。</div></div>
+        <div class="transport-step"><div class="transport-time">20:00</div><div class="transport-copy"><span class="transport-tag arrive">Arrive</span>抵達汐留飯店，全員休息。</div></div>
+      </div>
+
+      <div class="transport-day">
+        <h3>Day 3｜7/11 星期六：豐洲光影、商場與日本橋</h3>
+        <div class="transport-step"><div class="transport-time">09:30</div><div class="transport-copy"><span class="transport-tag depart">Depart</span>全員步行前往汐留站。</div></div>
+        <div class="transport-step"><div class="transport-time">09:40</div><div class="transport-copy"><span class="transport-tag depart">Depart</span>搭乘百合海鷗線電車。</div></div>
+        <div class="transport-step"><div class="transport-time">10:05</div><div class="transport-copy"><span class="transport-tag arrive">Arrive</span>抵達新豐洲站，步行 2 分鐘到展館。</div></div>
+        <div class="transport-step"><div class="transport-time">10:30</div><div class="transport-copy">上午分流。⚡ 活力組入場 teamLab Planets，預約 10:30；🛋️ 慢遊組不進展館，10:10 抵達豐洲站，10:15 進入 LaLaport 的 moritae 喝茶。</div></div>
+        <div class="transport-step"><div class="transport-time">12:35</div><div class="transport-copy"><span class="transport-tag depart">Depart</span>活力組體驗完畢，步行 10 分鐘前往 LaLaport。</div></div>
+        <div class="transport-step"><div class="transport-time">12:45</div><div class="transport-copy"><span class="transport-tag arrive">Arrive</span>全員於豐洲 LaLaport 會合，吃沾麵午餐、逛街血拼。</div></div>
+        <div class="transport-step"><div class="transport-time">16:30</div><div class="transport-copy"><span class="transport-tag depart">Depart</span>全員於商場門口分乘計程車。</div></div>
+        <div class="transport-step"><div class="transport-time">16:50</div><div class="transport-copy"><span class="transport-tag arrive">Arrive</span>抵達日本橋高島屋，傍晚分流。🦖 寶可夢餐廳組 17:00 到東館 5 樓；🛍️ 百貨組逛本館與 COREDO，B1 買今半便當。</div></div>
+        <div class="transport-step"><div class="transport-time">19:30</div><div class="transport-copy"><span class="transport-tag depart">Depart</span>全員於高島屋大廳集合，分乘計程車。</div></div>
+        <div class="transport-step"><div class="transport-time">19:45</div><div class="transport-copy"><span class="transport-tag arrive">Arrive</span>回到汐留飯店，享用宵夜便當休息。</div></div>
+      </div>
+
+      <div class="transport-day">
+        <h3>Day 4｜7/12 星期日：包車、十國峠與熱海沙灘</h3>
+        <div class="transport-step"><div class="transport-time">09:00</div><div class="transport-copy"><span class="transport-tag depart">Depart</span>專屬包車在汐留飯店迎接，行李上車，直奔熱海。</div></div>
+        <div class="transport-step"><div class="transport-time">11:00</div><div class="transport-copy"><span class="transport-tag arrive">Arrive</span>抵達熱海站，步行進入商店街享用海鮮丼。</div></div>
+        <div class="transport-step"><div class="transport-time">13:15</div><div class="transport-copy"><span class="transport-tag depart">Depart</span>全員回包車，往十國峠出發。</div></div>
+        <div class="transport-step"><div class="transport-time">13:40</div><div class="transport-copy"><span class="transport-tag arrive">Arrive</span>抵達十國峠登山口；13:45 搭雙軌纜車，13:48 登頂。</div></div>
+        <div class="transport-step"><div class="transport-time">15:00</div><div class="transport-copy"><span class="transport-tag depart">Depart</span>搭纜車下山，15:05 全員上包車返回熱海。</div></div>
+        <div class="transport-step"><div class="transport-time">15:30</div><div class="transport-copy"><span class="transport-tag arrive">Arrive</span>返回熱海市區，下半天分流。🛋️ 慢遊組直達親水公園沙灘；⚡ 活力組於熱海銀座下車，步行搭熱海纜車衝刺熱海城。</div></div>
+        <div class="transport-step"><div class="transport-time">18:45</div><div class="transport-copy"><span class="transport-tag depart">Depart</span>包車先到熱海城接活力組，再到沙灘接慢遊組，全員上車。</div></div>
+        <div class="transport-step"><div class="transport-time">19:00</div><div class="transport-copy"><span class="transport-tag arrive">Arrive</span>抵達錦月熱海山莊，享用會席晚餐。</div></div>
+      </div>
+
+      <div class="transport-day">
+        <h3>Day 5｜7/13 星期一：大室山、城崎海岸與修善寺</h3>
+        <div class="transport-step"><div class="transport-time">09:00</div><div class="transport-copy"><span class="transport-tag depart">Depart</span>退房，行李上包車，沿海岸線開往東伊豆。</div></div>
+        <div class="transport-step"><div class="transport-time">09:50</div><div class="transport-copy"><span class="transport-tag arrive">Arrive</span>抵達大室山；10:00 搭吊椅纜車，10:06 登頂。</div></div>
+        <div class="transport-step"><div class="transport-time">11:30</div><div class="transport-copy"><span class="transport-tag depart">Depart</span>下山全員上包車，前往城崎海岸。</div></div>
+        <div class="transport-step"><div class="transport-time">11:45</div><div class="transport-copy"><span class="transport-tag arrive">Arrive</span>抵達老屋餐廳 Boranaya，享用金目鯛午餐。</div></div>
+        <div class="transport-step"><div class="transport-time">13:30</div><div class="transport-copy"><span class="transport-tag depart">Depart</span>午餐後分流。🛋️ 慢遊組留在 Boranaya 喝茶吹冷氣；⚡ 活力組步行林間步道，13:45 抵達門脇吊橋。</div></div>
+        <div class="transport-step"><div class="transport-time">14:40</div><div class="transport-copy">活力組回到 Boranaya 會合；14:45 全員上包車前往中伊豆。</div></div>
+        <div class="transport-step"><div class="transport-time">15:40</div><div class="transport-copy"><span class="transport-tag arrive">Arrive</span>抵達修善寺溫泉區，散策、泡足湯。</div></div>
+        <div class="transport-step"><div class="transport-time">18:45</div><div class="transport-copy"><span class="transport-tag depart">Depart</span>包車在溫泉街接全員，往山頂前進。</div></div>
+        <div class="transport-step"><div class="transport-time">18:55</div><div class="transport-copy"><span class="transport-tag arrive">Arrive</span>抵達並入住伊豆修善寺萬豪酒店。</div></div>
+      </div>
+
+      <div class="transport-day">
+        <h3>Day 6｜7/14 星期二：水豚君天堂與 Saphir 踴子號</h3>
+        <div class="transport-step"><div class="transport-time">10:30</div><div class="transport-copy"><span class="transport-tag depart">Depart</span>萬豪酒店退房，行李上包車，前往動物公園。</div></div>
+        <div class="transport-step"><div class="transport-time">11:00</div><div class="transport-copy"><span class="transport-tag arrive">Arrive</span>抵達伊豆仙人掌動物公園，全家看水豚、吃園區輕食。</div></div>
+        <div class="transport-step"><div class="transport-time">14:00</div><div class="transport-copy"><span class="transport-tag depart">Depart</span>全員上包車前往伊東車站。</div></div>
+        <div class="transport-step"><div class="transport-time">14:20</div><div class="transport-copy"><span class="transport-tag arrive">Arrive</span>抵達伊東車站，揮別包車司機，進站準備。</div></div>
+        <div class="transport-step"><div class="transport-time">15:10</div><div class="transport-copy"><span class="transport-tag depart">Depart</span>搭乘 Saphir 踴子號 4 號。</div></div>
+        <div class="transport-step"><div class="transport-time">16:45</div><div class="transport-copy"><span class="transport-tag arrive">Arrive</span>抵達東京車站，啟動接駁分流。</div></div>
+        <div class="transport-step"><div class="transport-time">16:55</div><div class="transport-copy">🛋️ 尊榮長輩幼童隊於計程車排班處上車，17:05 抵達 N+飯店秋葉原。📦 行李特攻隊搭 JR 山手線 2 站，17:00 抵達秋葉原站，17:05 步行到飯店會合。</div></div>
+        <div class="transport-step"><div class="transport-time">18:30</div><div class="transport-copy">秋葉原周邊晚餐至 20:30。活力組深夜可步行衝 DONKI 秋葉原店。</div></div>
+      </div>
+
+      <div class="transport-day">
+        <h3>Day 7｜7/15 星期三：淺草與晴空塔雙軌</h3>
+        <div class="transport-step"><div class="transport-time">09:10</div><div class="transport-copy"><span class="transport-tag depart">Depart</span>全員從秋葉原飯店大廳出發，分乘計程車。</div></div>
+        <div class="transport-step"><div class="transport-time">09:22</div><div class="transport-copy"><span class="transport-tag arrive">Arrive</span>抵達淺草寺側邊。慢遊組定點歇息，活力組衝雷門主街。</div></div>
+        <div class="transport-step"><div class="transport-time">10:50</div><div class="transport-copy"><span class="transport-tag depart">Depart</span>淺草寺集合，全員步行 5 分鐘。</div></div>
+        <div class="transport-step"><div class="transport-time">10:55</div><div class="transport-copy"><span class="transport-tag arrive">Arrive</span>抵達 Chinya，預約 11:00。</div></div>
+        <div class="transport-step"><div class="transport-time">12:45</div><div class="transport-copy"><span class="transport-tag depart">Depart</span>餐廳門口分乘計程車。</div></div>
+        <div class="transport-step"><div class="transport-time">12:53</div><div class="transport-copy"><span class="transport-tag arrive">Arrive</span>抵達東京晴空塔，下午分流。🥩 孝親組 15:20 搭電梯到 30 樓，15:30 抵達敘敘苑；🛍️ 水族館組 15:55 館內步行，16:00 進入墨田水族館。</div></div>
+        <div class="transport-step"><div class="transport-time">19:00</div><div class="transport-copy"><span class="transport-tag depart">Depart</span>全員在晴空塔 1 樓集合，分乘計程車。</div></div>
+        <div class="transport-step"><div class="transport-time">19:12</div><div class="transport-copy"><span class="transport-tag arrive">Arrive</span>回到秋葉原飯店休息。</div></div>
+      </div>
+
+      <div class="transport-day">
+        <h3>Day 8｜7/16 星期四：上野與送機</h3>
+        <div class="transport-step"><div class="transport-time">09:00</div><div class="transport-copy"><span class="transport-tag depart">Depart</span>隨身行李暫存大廳，全員分乘計程車前往上野。</div></div>
+        <div class="transport-step"><div class="transport-time">09:07</div><div class="transport-copy"><span class="transport-tag arrive">Arrive</span>抵達上野恩賜公園。⚡ 活力組健走神社路線；☕ 慢遊組計程車直達公園內星巴克，09:12 抵達喝咖啡。</div></div>
+        <div class="transport-step"><div class="transport-time">11:30</div><div class="transport-copy"><span class="transport-tag depart">Depart</span>全員於公園門口集合，分乘計程車返回。</div></div>
+        <div class="transport-step"><div class="transport-time">11:37</div><div class="transport-copy"><span class="transport-tag arrive">Arrive</span>回到秋葉原飯店大廳。</div></div>
+        <div class="transport-step"><div class="transport-time">11:50</div><div class="transport-copy"><span class="transport-tag depart">Depart</span>送機大專車抵達飯店，行李全上車，前往機場。</div></div>
+        <div class="transport-step"><div class="transport-time">12:45</div><div class="transport-copy"><span class="transport-tag arrive">Arrive</span>抵達機場，辦理登機與免稅店採購，準備國泰航空 CX451 回台。</div></div>
+      </div>
+    </section>
+    
+            <section class="day-card" id="day-1">
+              <div class="day-head">
+                <span class="day-badge">Day 1</span>
+                <h2>抵達東京與夜生活開場</h2>
+                <p>🗓️ Day 1 (7/9 星期四)：抵達東京與夜生活開場</p>
+              </div>
+              <div class="day-body">
+                <div class="weather-card" data-weather-day="day-1" data-weather-date="2026-07-09" data-weather-place="東京"><h4>🌤️ 東京天氣 <span class="weather-meta">2026-07-09</span></h4><p class="weather-status">開啟網路後自動更新預報。</p><p class="weather-advice">出發前與當天早上請再確認一次。</p></div>
+                <div class="flight-detail-card"><h4>✈️ 去程航班｜國泰航空 CX450</h4><p><strong>路線：</strong>TAIPEI TAIWAN TAOYUAN INTL（第 1 航廈） → TOKYO NARITA INTL（第 2 航廈）</p><div class="flight-detail-grid"><p><strong>起飛：</strong>13:00｜09Jul2026</p><p><strong>抵達：</strong>17:15｜09Jul2026</p><p><strong>艙等：</strong>Economy｜Class Q</p><p><strong>座位：</strong>尚未指定</p><p><strong>訂位狀態：</strong>OK</p><p><strong>托運行李：</strong>2PC</p><p><strong>飛行時間：</strong>03:15</p><p><strong>票價：</strong>Economy Essential</p></div><p><strong>營運/銷售：</strong>Cathay Pacific</p><p><strong>NVB/NVA：</strong>09Jul2026 / 09Jul2026</p></div>
+                <div class="timeline-item"><div class="dot"></div><div class="time">飯店 Check-in</div><div class="copy">辦理入住並放妥行李（東京汐留三井飯店）。</div></div><div class="hotel-info"><p><strong>🏨 飯店：</strong><a class="place-link" href="https://www.google.com/maps/search/?api=1&query=Mitsui%20Garden%20Hotel%20Shiodome%20Italia-gai" target="_blank" rel="noopener noreferrer">Mitsui Garden Hotel Shiodome Italia-gai（東京汐留三井飯店）</a></p><p><strong>地址：</strong>2-14-24, Higashi-shimbashi, Minato-ku, Tokyo, 105-0021</p><p><strong>電話：</strong><a class="place-link" href="tel:+81334311131">+81-3-3431-1131</a></p><p><strong>連結：</strong><a class="place-link" href="https://www.gardenhotels.co.jp/shiodome-italiagai/eng/" target="_blank" rel="noopener noreferrer">官方網站</a></p></div><div class="schedule-list"><div class="schedule-row"><div class="schedule-time">20:00 晚餐</div><div class="schedule-detail"><p><a class="place-link" href="https://www.google.com/maps/search/?api=1&query=%E5%92%8C%E9%A3%9F%E3%81%88%E3%82%93%20%E6%B1%90%E7%95%99%E5%BA%97" target="_blank" rel="noopener noreferrer">和食えん 汐留店</a></p><p>★ 享用優雅和食，內含兩小時酒類放題（無限暢飲），為東京之夜揭開序幕。</p></div></div><div class="schedule-row"><div class="schedule-time">【購物】</div><div class="schedule-detail"><p><a class="place-link" href="https://www.google.com/maps/search/?api=1&query=DON%20DON%20DONKI%20%E9%8A%80%E5%BA%A7%E6%9C%AC%E9%A4%A8" target="_blank" rel="noopener noreferrer">DON DON DONKI 銀座本館</a></p><p>★ 24 小時營業的驚安殿堂，夜間採購藥妝、零食的最佳去處。</p></div></div><div class="schedule-row"><div class="schedule-time">【宵夜】</div><div class="schedule-detail"><p><a class="place-link" href="https://www.google.com/maps/search/?api=1&query=Ginza%20Sand%20%E9%8A%80%E5%BA%A7" target="_blank" rel="noopener noreferrer">Ginza Sand</a> 三明治</p><p>★ 推薦品項：</p><p>「タマゴカツサンド (香酥炸玉子磚三明治)」</p><p>「特選国産牛ヘレカツサンド (和牛菲力三明治)」</p></div></div></div>
+              </div>
+            </section>
+            
+            <section class="day-card" id="day-2">
+              <div class="day-head">
+                <span class="day-badge">Day 2</span>
+                <h2>文化參拜與原宿、麻布台分組行程</h2>
+                <p>🗓️ Day 2 (7/10 星期五)：文化參拜與原宿、麻布台分組行程</p>
+              </div>
+              <div class="day-body">
+                <div class="weather-card" data-weather-day="day-2" data-weather-date="2026-07-10" data-weather-place="東京"><h4>🌤️ 東京天氣 <span class="weather-meta">2026-07-10</span></h4><p class="weather-status">開啟網路後自動更新預報。</p><p class="weather-advice">出發前與當天早上請再確認一次。</p></div>
+                <div class="timeline-item"><div class="dot"></div><div class="time">09:30 - 11:30</div><div class="copy">第一站：明治神宮</div></div><div class="timeline-item"><div class="dot"></div><div class="time">景點簡介</div><div class="copy">為了紀念明治天皇與昭憲皇太后而建，坐落於 70 公頃的巨大都市森林中，是東京市中心最具代表性的神道教聖地。</div></div><div class="note-block"><h4>🚖 計程車司機備註小卡（少走 15 分鐘碎石路祕技）</h4><p>請直接將以下內容出示給計程車司機看：</p><p>中文：請帶我到明治神宮會館的停車場。</p><p>日文/英文：明治神宮会館の駐車場までお願いします。 (Meiji Jingu Kaikan Parking Lot)</p><p>地址：東京都渋谷区代々木神園町1-1</p></div><div class="timeline-item"><div class="dot"></div><div class="time">12:00</div><div class="copy">第二站：中午分組行程（分流出發）</div></div><div class="group-grid"><article class="group-card"><h4>🗼 【第一組：麻布台之丘摩登組】</h4><p>麻布台之丘 (Azabudai Hills)</p><p>東京全新立體綠色現代都市，集結頂級建築美學、藝術市集與時尚大牌。</p><p>★ 森 Tower 33F 觀景台最新規定：</p><p>目前 Sky Lobby 已不對外免費開放。必須至 33 樓的「Sky Room Cafe &amp; Bar」點餐消費，或事先預訂 34 樓「<a class="place-link" href="https://www.google.com/maps/search/?api=1&query=Hills%20House%20Dining%2033%20Azabudai%20Hills" target="_blank" rel="noopener noreferrer">Hills House Dining 33</a>」餐廳，方可憑發票或訂位紀錄入場俯瞰東京鐵塔。</p><p>【午餐推薦】</p><ul><li><a class="place-link" href="https://www.google.com/maps/search/?api=1&query=Pelican%20Cafe%20Azabudai%20Hills" target="_blank" rel="noopener noreferrer">Pelican Café</a> (Garden Plaza B 1F 烤土司名店)</li><li><a class="place-link" href="https://www.google.com/maps/search/?api=1&query=Azabudai%20Hills%20Market" target="_blank" rel="noopener noreferrer">Azabudai Hills Market</a> B1 美食街</li></ul><p>【購物伴手禮】</p><ul><li>艾許奶油餅乾 <a class="place-link" href="https://www.google.com/maps/search/?api=1&query=Echire%20Azabudai%20Hills" target="_blank" rel="noopener noreferrer">Echire</a> (奶油界LV，必買鐵盒餅乾、費南雪)</li><li><a class="place-link" href="https://www.google.com/maps/search/?api=1&query=%E9%88%B4%E6%87%B8%20%E9%BA%BB%E5%B8%83%E5%8F%B0%E3%83%92%E3%83%AB%E3%82%BA" target="_blank" rel="noopener noreferrer">鈴懸</a> (草莓大福、最中餅、銅鑼燒)</li></ul></article><article class="group-card"><h4>🛍️ 【第二組：原宿澀谷潮流組】</h4><p>原宿 ➔ 表參道 ➔ 貓街 ➔ 澀谷</p><p>路線：竹下通 ➔ 太田記念美術館 ➔ HARAKADO、東急Plaza、Laforet 原宿 ➔ 表參道 ➔ <a class="place-link" href="https://www.google.com/maps/search/?api=1&query=UNITED%20ARROWS%20%E5%8E%9F%E5%AE%BF%E6%9C%AC%E5%BA%97" target="_blank" rel="noopener noreferrer">UNITED ARROWS 原宿本店</a> ➔ 貓街 ➔ 澀谷宫下公園</p><p>【亮點與小吃】</p><ul><li>I&#x27;m Donut 甜甜圈、竹下通、CUTE CUBE</li><li><a class="place-link" href="https://www.google.com/maps/search/?api=1&query=Marion%20Crepes%20%E5%8E%9F%E5%AE%BF%E7%AB%B9%E4%B8%8B%E9%80%9A%E3%82%8A" target="_blank" rel="noopener noreferrer">Marion Crepes</a> 可麗餅、<a class="place-link" href="https://www.google.com/maps/search/?api=1&query=Maison%20de%20FLEUR%20%E5%8E%9F%E5%AE%BF" target="_blank" rel="noopener noreferrer">Maison de FLEUR</a> 飾品</li><li>太田記念美術館 (開到17:30，地下室為手帕店「<a class="place-link" href="https://www.google.com/maps/search/?api=1&query=%E3%81%8B%E3%81%BE%E3%82%8F%E3%81%AC%20%E5%8E%9F%E5%AE%BF" target="_blank" rel="noopener noreferrer">かまわぬ</a>」)</li><li>東急Plaza「鏡面萬花筒手扶梯」，6樓空中花園星巴克</li><li>HARAKADO 2樓哈利波特商店 (21:00關)</li><li>貓街散步與購物：<a class="place-link" href="https://www.google.com/maps/search/?api=1&query=NUMBER%20SUGAR%20%E8%A1%A8%E5%8F%82%E9%81%93" target="_blank" rel="noopener noreferrer">NUMBER SUGAR</a>牛奶糖 (19:00關)、「<a class="place-link" href="https://www.google.com/maps/search/?api=1&query=%E7%AC%91%E8%9B%B8%20%E5%8E%9F%E5%AE%BF" target="_blank" rel="noopener noreferrer">笑蛸</a>」章魚燒</li><li>澀谷伴手禮：Shibuya Hikarie 4F <a class="place-link" href="https://www.google.com/maps/search/?api=1&query=HARBS%20%E6%97%A5%E6%9C%AC%E6%A9%8B%20%E4%B8%89%E8%B6%8A" target="_blank" rel="noopener noreferrer">Harbs</a> (21:00關)、SCRAMBLE SQUARE 1F 艾許奶油餅乾</li></ul></article></div>
+              </div>
+            </section>
+            
+            <section class="day-card" id="day-3">
+              <div class="day-head">
+                <span class="day-badge">Day 3</span>
+                <h2>台場光影、豐洲 Lalaport 與日本橋<a class="place-link" href="https://www.google.com/maps/search/?api=1&query=Pokemon%20Cafe%20Nihonbashi%20Tokyo" target="_blank" rel="noopener noreferrer">寶可夢餐廳</a></h2>
+                <p>🗓️ Day 3 (7/11 星期六)：台場光影、豐洲 Lalaport 與日本橋<a class="place-link" href="https://www.google.com/maps/search/?api=1&query=Pokemon%20Cafe%20Nihonbashi%20Tokyo" target="_blank" rel="noopener noreferrer">寶可夢餐廳</a></p>
+              </div>
+              <div class="day-body">
+                <div class="weather-card" data-weather-day="day-3" data-weather-date="2026-07-11" data-weather-place="東京"><h4>🌤️ 東京天氣 <span class="weather-meta">2026-07-11</span></h4><p class="weather-status">開啟網路後自動更新預報。</p><p class="weather-advice">出發前與當天早上請再確認一次。</p></div>
+                <div class="timeline-item"><div class="dot"></div><div class="time">09:30 - 10:15</div><div class="copy">交通：百合海鷗線高空美景</div></div><p class="plain-copy">從飯店出發前往豐洲，沿途可高空欣賞東京灣、彩虹大橋與台場的絕美海景。</p><div class="timeline-item"><div class="dot"></div><div class="time">10:30 - 12:30</div><div class="copy">第一站：豐洲 <a class="place-link" href="https://www.google.com/maps/search/?api=1&query=teamLab%20Planets%20Tokyo" target="_blank" rel="noopener noreferrer">teamLab Planets</a></div></div><div class="note-block"><h4>⚠️ teamLab 著裝與備註：</h4><ul><li>1. 館內需要光腳，且水深會泡到小腿肚（約30公分），請務必穿著膝蓋以上的短褲或易捲起褲管的寬鬆長褲。</li><li>2. 3歲以下免費。3歲小孩身高較矮，水可能會泡到腰部，大人須全程抱著，並務必幫小孩多帶一套換洗衣物。</li></ul></div><div class="timeline-item"><div class="dot"></div><div class="time">12:45 - 16:30</div><div class="copy">第二站：豐洲 Urban Dock LaLaport 午餐與購物</div></div><div class="timeline-item"><div class="dot"></div><div class="time">餐廳推薦</div><div class="copy">一樓美食街「<a class="place-link" href="https://www.google.com/maps/search/?api=1&query=%E3%81%A4%E3%81%91%E9%BA%BA%20%E7%8E%89%20%E8%B1%8A%E6%B4%B2" target="_blank" rel="noopener noreferrer">沾麵 玉</a>（つけ麺 玉）」濃厚魚介沾麵、<a class="place-link" href="https://www.google.com/maps/search/?api=1&query=%E7%AF%89%E5%9C%B0%E9%8A%80%E3%81%A0%E3%81%93%20%E3%82%89%E3%82%89%E3%81%BD%E3%83%BC%E3%81%A8%E8%B1%8A%E6%B4%B2" target="_blank" rel="noopener noreferrer">築地 銀だこ</a>章魚燒、<a class="place-link" href="https://www.google.com/maps/search/?api=1&query=%E3%81%A4%E3%81%8D%E3%81%98%E9%88%B4%E5%AF%8C%20%E3%81%99%E3%81%97%E5%AF%8C%20%E3%82%89%E3%82%89%E3%81%BD%E3%83%BC%E3%81%A8%E8%B1%8A%E6%B4%B2" target="_blank" rel="noopener noreferrer">つきじ鈴富 すし富</a>(海鮮+壽司)</div></div><div class="timeline-item"><div class="dot"></div><div class="time">下午茶推薦</div><div class="copy">日式茶咖啡廳 <a class="place-link" href="https://www.google.com/maps/search/?api=1&query=moritae%20%E3%82%89%E3%82%89%E3%81%BD%E3%83%BC%E3%81%A8%E8%B1%8A%E6%B4%B2" target="_blank" rel="noopener noreferrer">moritae</a> (茶蕎麥麵、茶想盛宴聖代、棉花糖泡泡抹茶冰)</div></div><div class="timeline-item"><div class="dot"></div><div class="time">購物推薦</div><div class="copy"><a class="place-link" href="https://www.google.com/maps/search/?api=1&query=BEAMS%20%E3%82%89%E3%82%89%E3%81%BD%E3%83%BC%E3%81%A8%E8%B1%8A%E6%B4%B2" target="_blank" rel="noopener noreferrer">Beams</a> (1F Center Port)、日式雜貨 <a class="place-link" href="https://www.google.com/maps/search/?api=1&query=KEYUCA%20%E3%82%89%E3%82%89%E3%81%BD%E3%83%BC%E3%81%A8%E8%B1%8A%E6%B4%B2" target="_blank" rel="noopener noreferrer">KEYUCA</a> (本館2F)、<a class="place-link" href="https://www.google.com/maps/search/?api=1&query=MUJI%20%E3%82%89%E3%82%89%E3%81%BD%E3%83%BC%E3%81%A8%E8%B1%8A%E6%B4%B2" target="_blank" rel="noopener noreferrer">Muji</a> (2F)</div></div><div class="timeline-item"><div class="dot"></div><div class="time">17:00 - 19:30</div><div class="copy">第三站：日本橋寶可夢中心與百貨逛街（分組行動）</div></div><div class="group-grid"><article class="group-card"><h4>🍱 <a class="place-link" href="https://www.google.com/maps/search/?api=1&query=Pokemon%20Cafe%20Nihonbashi%20Tokyo" target="_blank" rel="noopener noreferrer">寶可夢餐廳</a>組 (已預約 17:25 / 6人座)</h4><p>用餐時間嚴格限制 90 分鐘，好開心地與皮卡丘互動並享用限定餐點。</p><p>地點：日本橋高島屋 S.C. 東館 5 樓</p></article><article class="group-card"><h4>🛍️ 百貨逛街組</h4><p>可在高島屋日本橋店、COREDO 室町血拼。</p><ul><li><a class="place-link" href="https://www.google.com/maps/search/?api=1&query=HARBS%20%E6%97%A5%E6%9C%AC%E6%A9%8B%20%E4%B8%89%E8%B6%8A" target="_blank" rel="noopener noreferrer">HARBS</a>：日本橋三越本店新館 B1 (19:30關)</li><li><a class="place-link" href="https://www.google.com/maps/search/?api=1&query=%E8%8C%85%E4%B9%83%E8%88%8E%20%E6%9D%B1%E4%BA%AC%E9%A7%85" target="_blank" rel="noopener noreferrer">茅乃舍</a>高湯包：COREDO室町 1 的 1 樓 (20:00關)</li></ul></article></div><div class="note-block"><h4>🥩 百貨地下街「<a class="place-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BA%BA%E5%BD%A2%E7%94%BA%E4%BB%8A%E5%8D%8A%20%E6%97%A5%E6%9C%AC%E6%A9%8B%E9%AB%98%E5%B3%B6%E5%B1%8B" target="_blank" rel="noopener noreferrer">人形町今半</a>」壽喜燒快餐小抄：</h4><p>前往日本橋高島屋本館 B1 的「<a class="place-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BA%BA%E5%BD%A2%E7%94%BA%E4%BB%8A%E5%8D%8A%20%E6%97%A5%E6%9C%AC%E6%A9%8B%E9%AB%98%E5%B3%B6%E5%B1%8B" target="_blank" rel="noopener noreferrer">人形町今半</a>」黑毛和牛便當專櫃，購買「すすき焼弁当 (壽喜燒牛丼飯)」，不用預約排隊就能以親民價格（約 1,800~2,500 日圓）吃到頂級名店的牛肉與美味醬汁！</p></div><div class="timeline-item"><div class="dot"></div><div class="time">其他晚餐名店參考</div><div class="copy"><a class="place-link" href="https://www.google.com/maps/search/?api=1&query=%E8%9B%87%E3%81%AE%E5%B8%82%E6%9C%AC%E5%BA%97%20%E6%97%A5%E6%9C%AC%E6%A9%8B" target="_blank" rel="noopener noreferrer">蛇之市本店</a> (壽司)、<a class="place-link" href="https://www.google.com/maps/search/?api=1&query=%E4%B8%89%E7%A6%8F%E4%BA%AD%20%E6%97%A5%E6%9C%AC%E6%A9%8B" target="_blank" rel="noopener noreferrer">三福亭</a> (漢堡排)、<a class="place-link" href="https://www.google.com/maps/search/?api=1&query=%E6%97%A5%E6%9C%AC%E6%A9%8B%20%E3%81%8A%E5%A4%9A%E5%B9%B8%E6%9C%AC%E5%BA%97" target="_blank" rel="noopener noreferrer">日本橋 お多幸本店</a> (關東煮)、<a class="place-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BA%94%E4%BB%A3%E7%9B%AE%E8%8A%B1%E5%B1%B1%E3%81%86%E3%81%A9%E3%82%93%20%E6%97%A5%E6%9C%AC%E6%A9%8B" target="_blank" rel="noopener noreferrer">五代目花山烏龍麵</a> (排隊名店)</div></div>
+              </div>
+            </section>
+            
+            <section class="day-card" id="day-4">
+              <div class="day-head">
+                <span class="day-badge">Day 4</span>
+                <h2>熱海一日遊（開啟包車溫泉之旅）</h2>
+                <p>🗓️ Day 4 (7/12 星期日)：熱海一日遊（開啟包車溫泉之旅）</p>
+              </div>
+              <div class="day-body">
+                <div class="weather-card" data-weather-day="day-4" data-weather-date="2026-07-12" data-weather-place="熱海"><h4>🌤️ 熱海天氣 <span class="weather-meta">2026-07-12</span></h4><p class="weather-status">開啟網路後自動更新預報。</p><p class="weather-advice">出發前與當天早上請再確認一次。</p></div>
+                <div class="schedule-list"><div class="schedule-row"><div class="schedule-time">09:00</div><div class="schedule-detail"><p>包車司機至<a class="place-link" href="https://www.google.com/maps/search/?api=1&query=Mitsui%20Garden%20Hotel%20Shiodome%20Italia-gai" target="_blank" rel="noopener noreferrer">東京汐留三井飯店</a>迎接，大行李全數上車，專車前往熱海。</p><div class="hotel-info"><p><strong>🏨 飯店：</strong><a class="place-link" href="https://www.google.com/maps/search/?api=1&query=Mitsui%20Garden%20Hotel%20Shiodome%20Italia-gai" target="_blank" rel="noopener noreferrer">Mitsui Garden Hotel Shiodome Italia-gai（東京汐留三井飯店）</a></p><p><strong>地址：</strong>2-14-24, Higashi-shimbashi, Minato-ku, Tokyo, 105-0021</p><p><strong>電話：</strong><a class="place-link" href="tel:+81334311131">+81-3-3431-1131</a></p><p><strong>連結：</strong><a class="place-link" href="https://www.gardenhotels.co.jp/shiodome-italiagai/eng/" target="_blank" rel="noopener noreferrer">官方網站</a></p></div></div></div><div class="schedule-row"><div class="schedule-time">11:00 - 13:15</div><div class="schedule-detail"><p>第一站：熱海站前商店街（平和通與仲見世通）</p><p>享用豐盛的海鮮丼午餐，順道品嚐<a class="place-link" href="https://www.google.com/maps/search/?api=1&query=%E7%86%B1%E6%B5%B7%E3%83%97%E3%83%AA%E3%83%B3" target="_blank" rel="noopener noreferrer">熱海布丁</a>或現烤魚板 (<a class="place-link" href="https://www.google.com/maps/search/?api=1&query=%E7%A3%AF%E6%8F%9A%E3%81%92%20%E3%81%BE%E3%82%8B%E5%A4%A9%20%E7%86%B1%E6%B5%B7%E9%A7%85%E5%89%8D%E5%BA%97" target="_blank" rel="noopener noreferrer">磯揚げ まる天</a>)。</p></div></div><div class="schedule-row"><div class="schedule-time">13:45 - 15:00</div><div class="schedule-detail"><p>第二站：箱根十國峠</p><p>搭乘復古纜車上山，前往展望台 360 度飽覽富士山與駿河灣絕美風光。</p></div></div><div class="schedule-row"><div class="schedule-time">15:30 - 16:30</div><div class="schedule-detail"><p>第三站：熱海纜車</p><p>搭乘纜車登高，眺望著名的熱海港全景與美麗的山海景致。</p></div></div><div class="schedule-row"><div class="schedule-time">16:30 - 18:50</div><div class="schedule-detail"><p>第四站：熱海銀座商店街 ➔ 熱海海岸親水公園與沙灘</p><ul><li>熱海銀座 (16:30-17:45)：昭和澡堂風<a class="place-link" href="https://www.google.com/maps/search/?api=1&query=%E7%86%B1%E6%B5%B7%E3%83%97%E3%83%AA%E3%83%B3%E3%82%AB%E3%83%95%E3%82%A72nd" target="_blank" rel="noopener noreferrer">熱海布丁2號店</a>、三島由紀夫愛店 <a class="place-link" href="https://www.google.com/maps/search/?api=1&query=%E3%83%9C%E3%83%B3%E3%83%8D%E3%83%83%E3%83%88%20%E7%86%B1%E6%B5%B7" target="_blank" rel="noopener noreferrer">Bonnet 咖啡</a>。</li><li>沙灘與親水公園 (17:45-18:50)：傍晚散步、踏浪，享受溫馨家庭時光。</li></ul></div></div><div class="schedule-row"><div class="schedule-time">19:00</div><div class="schedule-detail"><p><a class="place-link" href="https://www.google.com/maps/search/?api=1&query=%E9%8C%A6%E6%9C%88%E7%86%B1%E6%B5%B7%E5%B1%B1%E8%8E%8A" target="_blank" rel="noopener noreferrer">錦月熱海山莊</a> Check-in ➔ 享用晚餐</p><div class="hotel-info"><p><strong>🏨 飯店：</strong><a class="place-link" href="https://www.google.com/maps/search/?api=1&query=%E9%8C%A6%E6%9C%88%E7%86%B1%E6%B5%B7%E5%B1%B1%E8%8E%8A" target="_blank" rel="noopener noreferrer">錦月熱海山莊</a></p><p><strong>地址：</strong>26-17 Ainoharacho, Atami, 413-0039 熱海市, 靜岡縣, 日本</p><p><strong>日文地址：</strong>〒413-0039 静岡県熱海相の原町 26-17</p><p><strong>電話：</strong>請以訂房確認信為準</p><p><strong>連結：</strong><a class="place-link" href="https://www.google.com/maps/search/?api=1&query=26-17%20Ainoharacho%2C%20Atami%2C%20413-0039" target="_blank" rel="noopener noreferrer">Google Maps 搜尋</a></p></div><p>抵達熱海溫泉飯店辦理入住，換上浴衣放鬆泡湯，享用精緻的溫泉會席晚餐。</p></div></div></div>
+              </div>
+            </section>
+            
+            <section class="day-card" id="day-5">
+              <div class="day-head">
+                <span class="day-badge">Day 5</span>
+                <h2>熱海 ➔ 大室山 ➔ 城崎海岸 ➔ 修善寺溫泉</h2>
+                <p>🚗 Day 5 (7/13 星期一)：熱海 ➔ 大室山 ➔ 城崎海岸 ➔ 修善寺溫泉</p>
+              </div>
+              <div class="day-body">
+                <div class="weather-card" data-weather-day="day-5" data-weather-date="2026-07-13" data-weather-place="伊豆"><h4>🌤️ 伊豆天氣 <span class="weather-meta">2026-07-13</span></h4><p class="weather-status">開啟網路後自動更新預報。</p><p class="weather-advice">出發前與當天早上請再確認一次。</p></div>
+                <div class="schedule-list"><div class="schedule-row"><div class="schedule-time">09:00</div><div class="schedule-detail"><p>熱海溫泉飯店出發，大行李全上包車，專車直奔東伊豆。</p></div></div><div class="schedule-row"><div class="schedule-time">09:50 - 11:30</div><div class="schedule-detail"><p>第一站：大室山火山錐</p><p>全家搭乘「雙人吊椅式纜車」上山，繞著火山口步道「缽巡」散步一圈（約20-30分鐘）。</p></div></div><div class="schedule-row"><div class="schedule-time">12:00 - 13:30</div><div class="schedule-detail"><p>第二站：城崎海岸海鮮餐廳 <a class="place-link" href="https://www.google.com/maps/search/?api=1&query=%E3%81%BC%E3%82%89%E7%B4%8D%E5%B1%8B%20%E4%BC%8A%E8%B1%86" target="_blank" rel="noopener noreferrer">Boranaya</a>（<a class="place-link" href="https://www.google.com/maps/search/?api=1&query=%E3%81%BC%E3%82%89%E7%B4%8D%E5%B1%8B%20%E4%BC%8A%E8%B1%86" target="_blank" rel="noopener noreferrer">ぼら納屋</a>）（已預訂）</p><p>享用在地知名的伊豆海鮮料理（如金目鯛魚料理）。</p></div></div><div class="schedule-row"><div class="schedule-time">13:30 - 14:40</div><div class="schedule-detail"><p>第三站：城崎海岸與門脇吊橋</p><p>飯後散步，挑戰離海面 23 公尺高的斷崖吊橋與燈塔（幼童同行請注意安全）。</p></div></div><div class="schedule-row"><div class="schedule-time">15:40 - 18:45</div><div class="schedule-detail"><p>第四站：修善寺溫泉散策與晚餐</p><p>參拜千年歷史修禪寺、跨越朱紅色桂橋、漫步竹林小徑，體驗獨鈷之湯足湯。</p><p>溫泉區美食推薦：<a class="place-link" href="https://www.google.com/maps/search/?api=1&query=%E3%81%82%E3%81%BE%E3%81%94%E8%8C%B6%E5%B1%8B%20%E4%BF%AE%E5%96%84%E5%AF%BA" target="_blank" rel="noopener noreferrer">甘子茶屋</a> (天魚醃漬蓋飯、烤香魚定食)、<a class="place-link" href="https://www.google.com/maps/search/?api=1&query=%E9%87%8E%E9%A2%A8%E5%A2%97%20%E4%BF%AE%E5%96%84%E5%AF%BA" target="_blank" rel="noopener noreferrer">野風增</a> (炸豬排店)。</p></div></div><div class="schedule-row"><div class="schedule-time">19:00 以前</div><div class="schedule-detail"><p><a class="place-link" href="https://www.google.com/maps/search/?api=1&query=Izu%20Marriott%20Hotel%20Shuzenji" target="_blank" rel="noopener noreferrer">修善寺萬豪酒店</a> Check-in</p><div class="hotel-info"><p><strong>🏨 飯店：</strong><a class="place-link" href="https://www.google.com/maps/search/?api=1&query=Izu%20Marriott%20Hotel%20Shuzenji" target="_blank" rel="noopener noreferrer">Izu Marriott Hotel Shuzenji（修善寺萬豪酒店）</a></p><p><strong>地址：</strong>1529 Odaira, Izu-shi, Shizuoka 410-2415, Japan</p><p><strong>電話：</strong><a class="place-link" href="tel:+81558721311">+81-558-72-1311</a></p><p><strong>連結：</strong><a class="place-link" href="https://www.marriott.com/en-us/hotels/fszsi-izu-marriott-hotel-shuzenji/overview/" target="_blank" rel="noopener noreferrer">官方網站</a></p></div><p>準時抵達山頂的伊豆修善寺萬豪酒店辦理入住，享受現代且寬敞的溫泉大浴場。</p></div></div></div>
+              </div>
+            </section>
+            
+            <section class="day-card" id="day-6">
+              <div class="day-head">
+                <span class="day-badge">Day 6</span>
+                <h2>修善寺 ➔ 小室山 ➔ 仙人掌公園 ➔ Saphir踴子號返回東京</h2>
+                <p>🚗 Day 6 (7/14 星期二)：修善寺 ➔ 小室山 ➔ 仙人掌公園 ➔ Saphir踴子號返回東京</p>
+              </div>
+              <div class="day-body">
+                <div class="weather-card" data-weather-day="day-6" data-weather-date="2026-07-14" data-weather-place="伊豆"><h4>🌤️ 伊豆天氣 <span class="weather-meta">2026-07-14</span></h4><p class="weather-status">開啟網路後自動更新預報。</p><p class="weather-advice">出發前與當天早上請再確認一次。</p></div>
+                <div class="timeline-item"><div class="dot"></div><div class="time">10:30</div><div class="copy"><a class="place-link" href="https://www.google.com/maps/search/?api=1&query=Izu%20Marriott%20Hotel%20Shuzenji" target="_blank" rel="noopener noreferrer">萬豪酒店</a>出發：辦理退房，行李全數上包車。</div></div><div class="hotel-info"><p><strong>🏨 飯店：</strong><a class="place-link" href="https://www.google.com/maps/search/?api=1&query=Izu%20Marriott%20Hotel%20Shuzenji" target="_blank" rel="noopener noreferrer">Izu Marriott Hotel Shuzenji（修善寺萬豪酒店）</a></p><p><strong>地址：</strong>1529 Odaira, Izu-shi, Shizuoka 410-2415, Japan</p><p><strong>電話：</strong><a class="place-link" href="tel:+81558721311">+81-558-72-1311</a></p><p><strong>連結：</strong><a class="place-link" href="https://www.marriott.com/en-us/hotels/fszsi-izu-marriott-hotel-shuzenji/overview/" target="_blank" rel="noopener noreferrer">官方網站</a></p></div><div class="timeline-item"><div class="dot"></div><div class="time">11:15 - 12:30</div><div class="copy">第一站：小室山：搭乘單人吊椅纜車前往山頂，漫步網紅景點「MISORA」景觀天台與玻璃步道。</div></div><div class="timeline-item"><div class="dot"></div><div class="time">12:45 - 14:20</div><div class="copy">第二站：伊豆仙人掌動物公園：看水豚，親近溫馴小動物，並在園區內享用輕食。</div></div><div class="timeline-item"><div class="dot"></div><div class="time">14:20 - 14:40</div><div class="copy">抵達伊東車站：揮別包車司機，結束包車服務。</div></div><div class="timeline-item"><div class="dot"></div><div class="time">15:10 - 16:45</div><div class="copy">第三站：搭乘 Saphir 踴子號（藍寶石特急）頂級返航：全車綠色車廂商務艙，舒舒服服直達東京車站！</div></div><div class="timeline-item"><div class="dot"></div><div class="time">16:45 後</div><div class="copy">東京車站採買與晚餐：可至東京車站 B1 改札外採買「<a class="place-link" href="https://www.google.com/maps/search/?api=1&query=%E8%8C%85%E4%B9%83%E8%88%8E%20%E6%9D%B1%E4%BA%AC%E9%A7%85" target="_blank" rel="noopener noreferrer">茅乃舍</a>」(21:00關)。最後，前往 <a class="place-link" href="https://www.google.com/maps/search/?api=1&query=N%2B%20Hotel%20Akihabara" target="_blank" rel="noopener noreferrer">N+飯店 秋葉原</a> Check-in。</div></div><div class="hotel-info"><p><strong>🏨 飯店：</strong><a class="place-link" href="https://www.google.com/maps/search/?api=1&query=N%2B%20Hotel%20Akihabara" target="_blank" rel="noopener noreferrer">N+飯店 秋葉原</a></p><p><strong>地址：</strong>請以訂房確認信為準</p><p><strong>電話：</strong>請以訂房確認信為準</p><p><strong>連結：</strong><a class="place-link" href="https://www.google.com/maps/search/?api=1&query=N%2B%20Hotel%20Akihabara" target="_blank" rel="noopener noreferrer">Google Maps 搜尋</a></p></div>
+              </div>
+            </section>
+            
+            <section class="day-card" id="day-7">
+              <div class="day-head">
+                <span class="day-badge">Day 7</span>
+                <h2>下町江戶風情與晴空塔水族館</h2>
+                <p>🗓️ Day 7 (7/15 星期三)：下町江戶風情與晴空塔水族館</p>
+              </div>
+              <div class="day-body">
+                <div class="weather-card" data-weather-day="day-7" data-weather-date="2026-07-15" data-weather-place="東京"><h4>🌤️ 東京天氣 <span class="weather-meta">2026-07-15</span></h4><p class="weather-status">開啟網路後自動更新預報。</p><p class="weather-advice">出發前與當天早上請再確認一次。</p></div>
+                <div class="timeline-item"><div class="dot"></div><div class="time">09:30 – 10:50</div><div class="copy">第一站：淺草觀音寺 ＋ 仲見世通</div></div><p class="plain-copy">體驗濃濃的江戶下町風情，品嚐<a class="place-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BA%80%E5%8D%81%20%E6%B5%85%E8%8D%89" target="_blank" rel="noopener noreferrer">龜十</a>銅鑼燒、<a class="place-link" href="https://www.google.com/maps/search/?api=1&query=%E6%B5%85%E8%8D%89%E3%83%A1%E3%83%B3%E3%83%81" target="_blank" rel="noopener noreferrer">淺草炸肉餅</a>、<a class="place-link" href="https://www.google.com/maps/search/?api=1&query=%E5%A3%BD%E3%80%85%E5%96%9C%E5%9C%92%20%E6%B5%85%E8%8D%89" target="_blank" rel="noopener noreferrer">壽壽喜園</a>爆濃抹茶冰、<a class="place-link" href="https://www.google.com/maps/search/?api=1&query=%E6%B5%85%E8%8D%89%E3%81%86%E3%81%AA%E3%81%AA" target="_blank" rel="noopener noreferrer">浅草うなな</a>鰻魚飯糰。</p><div class="timeline-item"><div class="dot"></div><div class="time">11:00 - 12:30</div><div class="copy">第二站：午餐——壽喜燒名名店 <a class="place-link" href="https://www.google.com/maps/search/?api=1&query=%E3%81%A1%E3%82%93%E3%82%84%20%E6%B5%85%E8%8D%89" target="_blank" rel="noopener noreferrer">Chinya</a> (<a class="place-link" href="https://www.google.com/maps/search/?api=1&query=%E3%81%A1%E3%82%93%E3%82%84%20%E6%B5%85%E8%8D%89" target="_blank" rel="noopener noreferrer">ちんや</a>)</div></div><p class="plain-copy">已預約老字號壽喜燒店，品嚐正宗關東風的極品和牛壽喜燒。</p><div class="timeline-item"><div class="dot"></div><div class="time">13:00 – 19:00</div><div class="copy">第三站：東京晴空塔與墨田水族館（分組行動）</div></div><div class="group-grid"><article class="group-card"><h4>🥩 高空享受燒肉組 (已預約 15:30 / 4人座)</h4><p><a class="place-link" href="https://www.google.com/maps/search/?api=1&query=%E5%8F%99%E3%80%85%E8%8B%91%20%E6%9D%B1%E4%BA%AC%E3%82%B9%E3%82%AB%E3%82%A4%E3%83%84%E3%83%AA%E3%83%BC%E3%82%BF%E3%82%A6%E3%83%B3%E3%82%BD%E3%83%A9%E3%83%9E%E3%83%81%E5%BA%97" target="_blank" rel="noopener noreferrer">敘敘苑燒肉</a>--晴空塔天空町（Solamachi）30樓景觀餐廳。一邊欣賞高空美景一邊享用頂級燒肉。</p></article><article class="group-card"><h4>🐧 墨田水族館托兒組</h4><p>15:45 就定位，觀看 16:00 最後一場企鵝餵食秀與絕美水母牆。</p><p>購物區：<a class="place-link" href="https://www.google.com/maps/search/?api=1&query=UNIQLO%20%E6%9D%B1%E4%BA%AC%E3%82%BD%E3%83%A9%E3%83%9E%E3%83%81" target="_blank" rel="noopener noreferrer">UNIQLO</a> (3F)、<a class="place-link" href="https://www.google.com/maps/search/?api=1&query=MUJI%20%E6%9D%B1%E4%BA%AC%E3%82%BD%E3%83%A9%E3%83%9E%E3%83%81" target="_blank" rel="noopener noreferrer">MUJI</a> (4F)、<a class="place-link" href="https://www.google.com/maps/search/?api=1&query=BEAMS%20JAPAN%20%E6%9D%B1%E4%BA%AC%E3%82%BD%E3%83%A9%E3%83%9E%E3%83%81" target="_blank" rel="noopener noreferrer">Beams Japan</a> (4F)。</p></article></div><div class="timeline-item"><div class="dot"></div><div class="time">19:00</div><div class="copy">晚間採購：Solamachi B3 樓層的 <a class="place-link" href="https://www.google.com/maps/search/?api=1&query=%E3%83%A9%E3%82%A4%E3%83%95%20%E3%82%BB%E3%83%B3%E3%83%88%E3%83%A9%E3%83%AB%E3%82%B9%E3%82%AF%E3%82%A8%E3%82%A2%20%E6%8A%BC%E4%B8%8A%E9%A7%85%E5%89%8D%E5%BA%97" target="_blank" rel="noopener noreferrer">Life 超市</a>。回到飯店，還可步行至飯店附近的 <a class="place-link" href="https://www.google.com/maps/search/?api=1&query=DON%20DON%20DONKI%20%E7%A7%8B%E8%91%89%E5%8E%9F%E5%BA%97" target="_blank" rel="noopener noreferrer">DON DON DONKI 秋葉原店</a>（24小時營業）。</div></div>
+              </div>
+            </section>
+            
+            <section class="day-card" id="day-8">
+              <div class="day-head">
+                <span class="day-badge">Day 8</span>
+                <h2>上野歷史散步與專車完美送機</h2>
+                <p>🗓️ Day 8 (7/16 星期四)：上野歷史散步與專車完美送機</p>
+              </div>
+              <div class="day-body">
+                <div class="weather-card" data-weather-day="day-8" data-weather-date="2026-07-16" data-weather-place="東京"><h4>🌤️ 東京天氣 <span class="weather-meta">2026-07-16</span></h4><p class="weather-status">開啟網路後自動更新預報。</p><p class="weather-advice">出發前與當天早上請再確認一次。</p></div>
+                <div class="flight-detail-card"><h4>✈️ 回程航班｜國泰航空 CX451</h4><p><strong>路線：</strong>TOKYO NARITA INTL（第 2 航廈） → TAIPEI TAIWAN TAOYUAN INTL（第 1 航廈）</p><div class="flight-detail-grid"><p><strong>起飛：</strong>15:45｜16Jul2026</p><p><strong>抵達：</strong>18:25｜16Jul2026</p><p><strong>艙等：</strong>Economy｜Class Q</p><p><strong>座位：</strong>尚未指定</p><p><strong>訂位狀態：</strong>OK</p><p><strong>托運行李：</strong>2PC</p><p><strong>飛行時間：</strong>03:40</p><p><strong>票價：</strong>Economy Essential</p></div><p><strong>營運/銷售：</strong>Cathay Pacific</p><p><strong>NVB/NVA：</strong>16Jul2026 / 16Jul2026</p></div>
+                <div class="timeline-item"><div class="dot"></div><div class="time">早晨採購</div><div class="copy">早起可先至「<a class="place-link" href="https://www.google.com/maps/search/?api=1&query=DON%20DON%20DONKI%20%E7%A7%8B%E8%91%89%E5%8E%9F%E5%BA%97" target="_blank" rel="noopener noreferrer">DON DON DONKI 秋葉原店</a>」進行最後衝刺。</div></div><div class="timeline-item"><div class="dot"></div><div class="time">09:00 - 11:30</div><div class="copy">第一站：上野恩賜公園經典巡禮</div></div><div class="timeline-item"><div class="dot"></div><div class="time">上野東照宮</div><div class="copy">供奉德川家康，金碧輝煌的江戶初期建築。</div></div><div class="timeline-item"><div class="dot"></div><div class="time">不忍池與辯天堂</div><div class="copy">優美天然池，散步吹風好去處。</div></div><div class="timeline-item"><div class="dot"></div><div class="time">花園稻荷神社</div><div class="copy">隱藏在公園小徑內的夢幻千本鳥居。</div></div><div class="timeline-item"><div class="dot"></div><div class="time">上野大佛</div><div class="copy">祈求考試合格與開運的合格大佛。</div></div><div class="timeline-item"><div class="dot"></div><div class="time">11:50</div><div class="copy">專車送機：預約包車送機專車從 <a class="place-link" href="https://www.google.com/maps/search/?api=1&query=N%2B%20Hotel%20Akihabara" target="_blank" rel="noopener noreferrer">N+飯店 秋葉原</a>出發，直達機場，完美結束 8 天 7 夜深度精緻行程。</div></div><div class="hotel-info"><p><strong>🏨 飯店：</strong><a class="place-link" href="https://www.google.com/maps/search/?api=1&query=N%2B%20Hotel%20Akihabara" target="_blank" rel="noopener noreferrer">N+飯店 秋葉原</a></p><p><strong>地址：</strong>請以訂房確認信為準</p><p><strong>電話：</strong>請以訂房確認信為準</p><p><strong>連結：</strong><a class="place-link" href="https://www.google.com/maps/search/?api=1&query=N%2B%20Hotel%20Akihabara" target="_blank" rel="noopener noreferrer">Google Maps 搜尋</a></p></div>
+              </div>
+            </section>
+            
+  </main>
+  <div class="screen-tools">
+    <button type="button" onclick="document.body.classList.toggle('clean')">截圖模式</button>
+    <button type="button" onclick="window.print()">列印</button>
+  </div>
+  <script>
+    function setPersonFilter(person) {
+      document.querySelectorAll(".person-tab").forEach((button) => {
+        button.classList.toggle("active", button.dataset.personFilter === person);
+      });
+      document.querySelectorAll(".split-event").forEach((event) => {
+        const people = event.dataset.persons || "";
+        event.classList.toggle("split-hidden", person !== "全部" && !people.includes(person) && !people.includes("全部"));
+      });
+      document.querySelectorAll(".split-day").forEach((day) => {
+        const visibleEvents = day.querySelectorAll(".split-event:not(.split-hidden)");
+        day.classList.toggle("split-hidden", visibleEvents.length === 0);
+      });
+    }
+
+    document.querySelectorAll(".person-tab").forEach((button) => {
+      button.addEventListener("click", () => setPersonFilter(button.dataset.personFilter));
+    });
+
+    const weatherLocations = {
+      "東京": { latitude: 35.6762, longitude: 139.6503, name: "東京" },
+      "熱海": { latitude: 35.0953, longitude: 139.0719, name: "熱海" },
+      "伊豆": { latitude: 34.9766, longitude: 138.9466, name: "伊豆/修善寺" }
+    };
+
+    const weatherLabels = [
+      { codes: [0], icon: "☀️", text: "晴" },
+      { codes: [1, 2], icon: "🌤️", text: "晴時多雲" },
+      { codes: [3], icon: "☁️", text: "多雲" },
+      { codes: [45, 48], icon: "🌫️", text: "有霧" },
+      { codes: [51, 53, 55, 56, 57], icon: "🌦️", text: "毛毛雨" },
+      { codes: [61, 63, 65, 66, 67, 80, 81, 82], icon: "🌧️", text: "雨" },
+      { codes: [95, 96, 99], icon: "⛈️", text: "雷雨" }
+    ];
+
+    function describeWeather(code) {
+      return weatherLabels.find((item) => item.codes.includes(code)) || { icon: "🌡️", text: "天氣預報" };
+    }
+
+    async function fetchWeather(place, date) {
+      const locationData = weatherLocations[place];
+      if (!locationData) return null;
+      const params = new URLSearchParams({
+        latitude: locationData.latitude,
+        longitude: locationData.longitude,
+        timezone: "Asia/Tokyo",
+        start_date: date,
+        end_date: date,
+        daily: "weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max"
+      });
+      const response = await fetch("https://api.open-meteo.com/v1/forecast?" + params.toString());
+      if (!response.ok) throw new Error("weather request failed");
+      const data = await response.json();
+      if (!data.daily || !data.daily.time || !data.daily.time.length) return null;
+      return {
+        code: data.daily.weather_code[0],
+        high: Math.round(data.daily.temperature_2m_max[0]),
+        low: Math.round(data.daily.temperature_2m_min[0]),
+        rain: data.daily.precipitation_probability_max[0]
+      };
+    }
+
+    async function updateWeatherCards() {
+      const cards = [...document.querySelectorAll(".weather-card")];
+      const cache = new Map();
+      for (const card of cards) {
+        const place = card.dataset.weatherPlace;
+        const date = card.dataset.weatherDate;
+        const key = place + "-" + date;
+        try {
+          if (!cache.has(key)) cache.set(key, await fetchWeather(place, date));
+          const forecast = cache.get(key);
+          if (!forecast) throw new Error("no forecast");
+          const label = describeWeather(forecast.code);
+          card.querySelector("h4").firstChild.textContent = label.icon + " " + place + "天氣 ";
+          card.querySelector(".weather-status").textContent = label.text + "｜" + forecast.low + "°C - " + forecast.high + "°C｜降雨機率 " + (forecast.rain ?? "--") + "%";
+          card.querySelector(".weather-advice").textContent = forecast.rain >= 50 ? "建議帶折傘、薄外套，推車雨罩也放進隨身包。" : "建議補水、防曬，長輩與小孩中午安排室內休息。";
+        } catch (error) {
+          card.querySelector(".weather-status").textContent = "目前無法自動更新天氣，請開啟網路後重新整理。";
+        }
+      }
+    }
+
+    updateWeatherCards();
+
+    if (location.hash) {
+      setTimeout(() => document.querySelector(location.hash)?.scrollIntoView(), 120);
+    }
+  </script>
+</body>
+</html>
